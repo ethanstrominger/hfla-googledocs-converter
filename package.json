@@ -1,5 +1,4 @@
 {
-  "dependencies": {
-    "gatsby-source-gdocs2md": "^1.0.0"
-  }
+  "type": "module",
+  "dependencies": {}
 }
