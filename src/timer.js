@@ -11,7 +11,8 @@ export class Timer {
   }
 
   setStatus(status) {
-    console.log("Status:", status, Date.now() - this.time);
+    console.log("Status:", status);
+    console.log("Time:", Date.now() - this.time);
     this.time = Date.now();
   }
 
