@@ -1,4 +1,4 @@
-import pkg from "../gatsby-source-gdocs2md/src/source-gdocs2md.js";
+import pkg from "../hfla-googledocs-converter-utils/src/source-gdocs2md.js";
 import { Reporter } from "./Reporter.js";
 const { sourceGDocs2MD } = pkg;
 
