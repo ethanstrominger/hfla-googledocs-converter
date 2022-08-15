@@ -1,4 +1,4 @@
-import pkg from "../hfla-utils/gdocs2md/src/source-gdocs2md.js";
+import pkg from "../hfla-utils/utils/gdocs2md/src/source-gdocs2md.js";
 import { Reporter } from "./Reporter.js";
 const { sourceGDocs2MD } = pkg;
 
