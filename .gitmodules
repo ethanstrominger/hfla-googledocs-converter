@@ -1,6 +1,3 @@
-[submodule "batch-googledocs2md"]
-	path = batch-googledocs2md
-	url = git@github.com:ethanstrominger/batch-googledocs2md.git
-[submodule "gatsby-source-gdocs2md"]
-	path = gatsby-source-gdocs2md
-	url = git@github.com:icaraps/gatsby-source-gdocs2md.git
+[submodule "hfla-googledocs-converter-utils"]
+	path = hfla-googledocs-converter-utils
+	url = git@github.com:ethanstrominger/hfla-googledocs-converter-utils.git
