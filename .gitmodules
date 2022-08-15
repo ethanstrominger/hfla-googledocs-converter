@@ -1,0 +1,3 @@
+[submodule "hfla-utils"]
+	path = hfla-utils
+	url = git@github.com:ethanstrominger/hfla-utils.git
