@@ -1,8 +1,8 @@
-import pkg from "../hfla-utils/utils/gdocs2md/src/source-gdocs2md.js";
+import pkg from "../hfla-utils/utils/gdocs2md/src/gdrive2md.js";
 import { Reporter } from "./Reporter.js";
-const { sourceGDocs2MD } = pkg;
+const { gdrive2md } = pkg;
 
 const reporter = new Reporter();
 const pluginOptions = { folder: "1R2fYUh2EwbLot9Akm311Osxpl7WbvEvM" };
 
-sourceGDocs2MD({ actions: { reporter } }, pluginOptions);
+gdrive2md({ actions: { reporter } }, pluginOptions);

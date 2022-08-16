@@ -7,7 +7,7 @@ export class Timer {
   }
 
   start() {
-    this.setStatus("started");
+    this.setStatus("initialized");
   }
 
   setStatus(status) {
