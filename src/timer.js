@@ -12,9 +12,9 @@ export class Timer {
 
   setStatus(status) {
     console.log(
-      "Status/time:",
-      status,
-      "/time",
+      "Status:",
+      status.padEnd(16),
+      " | elapsed:",
       (Date.now() - this.time) / 1000,
       "seconds"
     );
