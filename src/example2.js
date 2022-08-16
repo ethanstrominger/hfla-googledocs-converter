@@ -13,14 +13,18 @@ const pluginOptions = { folder: "1R2fYUh2EwbLot9Akm311Osxpl7WbvEvM" };
 const options = _merge({}, DEFAULT_OPTIONS, pluginOptions);
 
 const googleDocuments = await fetchDocuments(options);
+console.log("break");
 
-googleDocuments.forEach(async (document) => {
-  const googleDocument = await convertGDoc2ElementsObj({ document });
+googleDocuments.forEach(async (loopGoogleDocument) => {
+  const googleDocument = await convertGDoc2ElementsObj({
+    document: loopGoogleDocument.document,
+  });
   console.log("title:", googleDocument.title, "body:", googleDocument.body);
   const markdownBody = await convertElements2MD(googleDocument.elements);
   const frontMatter = getGatsbyFrontMatter(googleDocument);
   const markdown = `${frontMatter}${markdownBody}`;
-  fs.outputFileSync(
+  const { properties } = googleDocument;
+  fs.writeFileSync(
     path.join(
       options.target,
       `${properties.path ? properties.path : "index"}.md`
