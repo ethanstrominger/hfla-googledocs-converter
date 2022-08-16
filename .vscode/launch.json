@@ -4,8 +4,17 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+    {
+        "name": "Attach",
+        "port": 9229,
+        "request": "attach",
+        "skipFiles": [
+            "<node_internals>/**"
+        ],
+        "type": "node"
+    },
         {
-            "name": "Attach",
+            "name": "Attach x",
             "port": 9229,
             "request": "attach",
             "skipFiles": [
@@ -41,14 +50,6 @@
             "disableOptimisticBPs": true,
         },
         {
-            "port": 9229,
-            "request": "attach",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "type": "node"
-        },
-        {
             "type": "pwa-node",
             "request": "launch",
             "envFile": "src/.env",
@@ -57,6 +58,16 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/src/example.js"
-        }
+        },
+                {
+                    "type": "pwa-node",
+                    "request": "launch",
+                    "envFile": "src/.env",
+                    "name": "Launch Program3",
+                    "skipFiles": [
+                        "<node_internals>/**"
+                    ],
+                    "program": "${workspaceFolder}/src/example2.js"
+                }
     ]
 }
