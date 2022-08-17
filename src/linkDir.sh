@@ -1,0 +1,1 @@
+ln -s /Users/ethanadmin/projects/hackforla-website googledocs-output 
