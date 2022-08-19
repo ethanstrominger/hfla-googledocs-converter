@@ -7,6 +7,7 @@ import {
   convertGDoc2ElementsObj,
   convertElements2MD,
   formatHeading2MarkdownSection,
+  addHeading2MarkdownAnchor,
 } from "../hfla-utils/utils/gdocs2md/src/convert.js";
 // import { getGatsbyFrontMatter } from "../hfla-utils/utils/gdocs2md/src/gdocs2md-gatsby.js";
 import { DEFAULT_OPTIONS } from "./constants.js";
@@ -24,6 +25,7 @@ googleDocuments.forEach(async (loopGoogleDocument) => {
   const frontMatter = "";
   let markdown = `${frontMatter}${markdownBody}`;
   markdown = formatHeading2MarkdownSection(markdown);
+  markdown = addHeading2MarkdownAnchor(markdown);
   const { properties } = googleDocument;
   fs.writeFileSync(
     path.join(

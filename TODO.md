@@ -2,17 +2,41 @@ Tasks
 
 - [x] Create directory with some Google doc guides
 - [x] Create node script that calls npm package to convert google docs to markdown from specified Google dir and its subdirs to specified output location
-- [ ] Inspect results for Google doc guides
-- [ ] Modify markdown directly for images and sections
-- [ ] Inspect results again
-- [ ] Fix images issue
-- [ ] Create script to copy converted documents where build process would pick them up
-- [ ] Manually create a TOC page for listing the guides
+- [x] Inspect results for Google doc guides
+- [x] Modify markdown directly for images and sections
+- [x] Inspect results again
+- [x] Fix images issue
+- [x] Create script to copy converted documents where build process would pick them up
+- [x] Manually create a TOC page for listing the guides
 - [x] Create separate directories for in progress. Add a new document and revised document to this directory.
-- [ ] Manually create a TOC that shows original and in progress guides.
-- [ ] Create script to auto generate a TOC for these pages
-- [ ] Add auto generate TOC to build process
+- [x] Manually create a TOC that shows original and in progress guides.
+- [ ] \*\* Generate / modify frontmatter
+- [ ] \*\* Modify script to add anchors to markdown to auto generate a TOC
 - [ ] Add hook to automatically generate new markdown and TOC when a file is created, modified, or deleted.
+- [ ] Make gdocs output directory configurable
+- [ ] Documentation
+  - [ ] README: explain linkDir.sh]
+  - [ ] History of fork
+  - [ ] Copy and customize extensive documentation on package
+  - [ ] Env vars
+- [ ] Fix two documents that fail test due to incorrect sample
+- [ ] \*\* Code block
+- [ ] Get rid of Reporter
+- [ ] ?? Test out if links can be different than filename?
+- [ ] Add tests for jekyllified
+- [ ] Improve error message if token not set up
+- [ ]\*\* Frontmatter
+  - [ ] Automated
+  - [ ] Custom
+  - [ ] Custom overwrites automted
+  - [ ] Automated overwrites default
+- [ ] \*\* Images
+  - [ ] Figure out if need to set size (example: Slack image was cropped)
+  - [ ] Store image locally (otherwise, permission issue)
+  - [ ] Figure out how to get alt text
+- [ ] Make documents in progress viewable via URL
 - [ ] Create npmjs package
-- [ ] Provide option for specifying folder name
-- [ ] Provide option for looking at docs shared whit me and shared drives
+  - [ ] Token + fetch google docs
+  - [ ] gdocs2md
+  - [ ] jekyllify
+- [ ] \*\* Auto renew token
