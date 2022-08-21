@@ -9,7 +9,9 @@ import {
   formatHeading2MarkdownSection,
   addHeading2MarkdownAnchor,
 } from "../hfla-utils/utils/gdocs2md/src/convert.js";
-// import { getGatsbyFrontMatter } from "../hfla-utils/utils/gdocs2md/src/gdocs2md-gatsby.js";
+// TODO: provide example script that uses this?
+// import { getFrontMatterFromGdoc } from "../hfla-utils/utils/gdocs2md/src/utils.js";
+import { jekyllifyFrontMatter } from "../hfla-utils/utils/gdocs2md/src/utils.js";
 import { DEFAULT_OPTIONS } from "./constants.js";
 const pluginOptions = { folder: "1R2fYUh2EwbLot9Akm311Osxpl7WbvEvM" };
 const options = _merge({}, DEFAULT_OPTIONS, pluginOptions);
@@ -20,10 +22,10 @@ googleDocuments.forEach(async (loopGoogleDocument) => {
   const googleDocument = await convertGDoc2ElementsObj({
     ...loopGoogleDocument,
   });
-  const markdownBody = await convertElements2MD(googleDocument.elements);
-  // const frontMatter = getGatsbyFrontMatter(googleDocument);
-  const frontMatter = "";
-  let markdown = `${frontMatter}${markdownBody}`;
+  let markdown = await convertElements2MD(googleDocument.elements);
+  // const frontMatter = getFrontMatterFromGdoc(googleDocument);
+  // markdown = getFrontMatterFromGdoc(googleDocument, markdown);
+  markdown = jekyllifyFrontMatter(googleDocument, markdown);
   markdown = formatHeading2MarkdownSection(markdown);
   markdown = addHeading2MarkdownAnchor(markdown);
   const { properties } = googleDocument;
