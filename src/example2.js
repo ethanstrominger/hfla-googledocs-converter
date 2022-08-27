@@ -29,6 +29,12 @@ googleDocuments.forEach(async (loopGoogleDocument) => {
   markdown = formatHeading2MarkdownSection(markdown);
   markdown = addHeading2MarkdownAnchor(markdown);
   const { properties } = googleDocument;
+  const file = path.join(
+    options.target,
+    `${properties.path ? properties.path : "index"}-gdocs.md`
+  );
+  const dir = path.dirname(file);
+  fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(
     path.join(
       options.target,

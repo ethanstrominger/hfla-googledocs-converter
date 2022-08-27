@@ -10,33 +10,37 @@ Tasks
 - [x] Manually create a TOC page for listing the guides
 - [x] Create separate directories for in progress. Add a new document and revised document to this directory.
 - [x] Manually create a TOC that shows original and in progress guides.
-- [ ] \*\* Generate / modify frontmatter
-- [ ] \*\* Modify script to add anchors to markdown to auto generate a TOC
+- [ ] - Add TOC
 - [ ] Add hook to automatically generate new markdown and TOC when a file is created, modified, or deleted.
-- [ ] Make gdocs output directory configurable
+- [ ] Config
+  - [ ] Make gdocs output directory configurable
+  - [ ] Make frontmatter generation configurable
+  - [ ] Make frontmatter content configurable
 - [ ] Documentation
-  - [ ] README: explain linkDir.sh]
+  - [ ] Explain linkDir.sh
   - [ ] History of fork
   - [ ] Copy and customize extensive documentation on package
+  - [ ] Generate certificate and token
   - [ ] Env vars
 - [ ] Fix two documents that fail test due to incorrect sample
-- [ ] \*\* Code block
+- [ ] - Code block
 - [ ] Get rid of Reporter
-- [ ] ?? Test out if links can be different than filename?
+- [ ] Test out if links can be different than filename?
 - [ ] Add tests for jekyllified
 - [ ] Improve error message if token not set up
-- [ ]\*\* Frontmatter
-  - [ ] Automated
-  - [ ] Custom
-  - [ ] Custom overwrites automted
-  - [ ] Automated overwrites default
-- [ ] \*\* Images
-  - [ ] Figure out if need to set size (example: Slack image was cropped)
-  - [ ] Store image locally (otherwise, permission issue)
-  - [ ] Figure out how to get alt text
-- [ ] Make documents in progress viewable via URL
+- [x] Frontmatter
+  - [x] Automated
+  - [x] Custom
+  - [x] Custom overwrites automted
+  - [x] Automated overwrites default
+  - [ ] +++ Test
+- [ ] +++ Images
+  - [ ] +++ Store image locally (otherwise, permission issue)
+  - [ ] +++ Figure out if need to set size (example: Slack image was cropped)
+- [ ] +++ Propose dir structure
+- [ ] Figure out how interactive
 - [ ] Create npmjs package
   - [ ] Token + fetch google docs
   - [ ] gdocs2md
   - [ ] jekyllify
-- [ ] \*\* Auto renew token
+- [ ] - Auto renew token
