@@ -6,8 +6,6 @@ import { fetchDocuments } from "../hfla-utils/utils/getGdocsTokenAndFetch/src/go
 import {
   convertGDoc2ElementsObj,
   convertElements2MD,
-  formatHeading2MarkdownSection,
-  addHeading2MarkdownAnchor,
 } from "../hfla-utils/utils/gdocs2md/src/convert.js";
 // TODO: provide example script that uses this?
 // import { getFrontMatterFromGdoc } from "../hfla-utils/utils/gdocs2md/src/utils.js";
@@ -25,9 +23,11 @@ googleDocuments.forEach(async (loopGoogleDocument) => {
   let markdown = await convertElements2MD(googleDocument.elements);
   // const frontMatter = getFrontMatterFromGdoc(googleDocument);
   // markdown = getFrontMatterFromGdoc(googleDocument, markdown);
+  console.log("processing", googleDocument.properties?.title);
   markdown = jekyllifyFrontMatter(googleDocument, markdown);
-  markdown = formatHeading2MarkdownSection(markdown);
-  markdown = addHeading2MarkdownAnchor(markdown);
+  console.log("jekyllifyFrontMatter", markdown.substring(0, 300), "** end **");
+  // markdown = formatHeading2MarkdownSection(markdown);
+  // markdown = addHeading2MarkdownAnchor(markdown);
   const { properties } = googleDocument;
   const file = path.join(
     options.target,
@@ -38,8 +38,11 @@ googleDocuments.forEach(async (loopGoogleDocument) => {
   fs.writeFileSync(
     path.join(
       options.target,
-      `${properties.path ? properties.path : "index"}-gdocs.md`
+      `${properties.path ? properties.path : "index"}xx-gdocs.md`
     ),
     markdown
   );
 });
+
+const fake = () => {};
+export default fake;
