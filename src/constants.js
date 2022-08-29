@@ -3,6 +3,7 @@ export const DEFAULT_OPTIONS = {
   demoteHeadings: true,
   folder: undefined,
   target: "googledocs-output/_guide-pages",
+  imagesTarget: "googledocs-output/assets/images/_guide-pages",
   imagesOptions: undefined,
   keepDefaultStyle: false,
   pageContext: [],
