@@ -10,37 +10,49 @@ Tasks
 - [x] Manually create a TOC page for listing the guides
 - [x] Create separate directories for in progress. Add a new document and revised document to this directory.
 - [x] Manually create a TOC that shows original and in progress guides.
-- [ ] - Add TOC
-- [ ] Add hook to automatically generate new markdown and TOC when a file is created, modified, or deleted.
+      created, modified, or deleted.
 - [ ] Config
   - [ ] Make gdocs output directory configurable
   - [ ] Make frontmatter generation configurable
   - [ ] Make frontmatter content configurable
-- [ ] Documentation
-  - [ ] Explain linkDir.sh
+- [ ] **_ +++ DOCUMENTATION _**
+  - [ ] ++ Explain linkDir.sh
   - [ ] History of fork
   - [ ] Copy and customize extensive documentation on package
-  - [ ] Generate certificate and token
-  - [ ] Env vars
-- [ ] Fix two documents that fail test due to incorrect sample
-- [ ] - Code block
-- [ ] Get rid of Reporter
-- [ ] Test out if links can be different than filename?
-- [ ] Add tests for jekyllified
-- [ ] Improve error message if token not set up
-- [x] Frontmatter
+  - [ ] +++ Generate certificate and token
+  - [ ] +++ Env vars
+  - [ ] +++ How to test
+- [ ] **_ MISC _**
+  - [ ] +++ Propose dir structure
+  - [ ] Auto renew token
+  - [ ] Fix two documents that fail test due to incorrect sample
+  - [ ] Find out from Alyssa why identify code block by quotes, explain how they do it
+  - [ ] Code block
+  - [ ] Get rid of Reporter
+  - [ ] Test out if links can be different than filename?
+  - [ ] Add ID: to frontmatter of google doc and use for filename for consistent URL
+  - [ ] Add hook to automatically generate new markdown and TOC when a file is added, deleted,modified
+- [ ] **_ +++ TEST _**
+  - [ ] Generate JSON of Google Docs
+  - [ ] Create docs of different types
+  - [ ] Generate JSON
+  - [ ] Create a jekyllifyDoc to jekllify a single doc
+  - [ ] Copy existing tests and modify
+- [ ] **_ +++ ADD TOC _**
+  - [ ] Test out TOC.html
+- [ ] **_ TOKEN _**
+  - [ ] +++ Auto renew token
+  - [ ] Improve error message if token not set up
+  - [ ] Don't prompt for certificate if already exists
+- [x] **_ FRONT MATTER _**
   - [x] Automated
   - [x] Custom
-  - [x] Custom overwrites automted
+  - [x] Custom overwrites automated
   - [x] Automated overwrites default
-  - [ ] +++ Test
-- [ ] +++ Images
-  - [ ] +++ Store image locally (otherwise, permission issue)
-  - [ ] +++ Figure out if need to set size (example: Slack image was cropped)
-- [ ] +++ Propose dir structure
-- [ ] Figure out how interactive
-- [ ] Create npmjs package
+- [ ] **_ +++ IMAGES _**
+  - [x] +++ Store image locally (otherwise, permission issue)
+  - [ ] +++ Set size
+- [ ] **_ CREATE NPMJS PACKAGE _**
   - [ ] Token + fetch google docs
   - [ ] gdocs2md
   - [ ] jekyllify
-- [ ] - Auto renew token
