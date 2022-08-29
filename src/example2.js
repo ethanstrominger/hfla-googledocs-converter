@@ -30,7 +30,9 @@ if (matchPattern) {
   });
 }
 
+console.log("looping", matchPattern);
 googleDocuments.forEach(async (loopGoogleDocument) => {
+  console.log("inside");
   const googleDocument = await convertGDoc2ElementsObj({
     ...loopGoogleDocument,
   });
@@ -50,7 +52,8 @@ googleDocuments.forEach(async (loopGoogleDocument) => {
   fs.writeFileSync(
     path.join(
       options.target,
-      `${properties.path ? properties.path : "index"}xx-gdocs.md`
+      // TODO: rename path to filename
+      `${properties.path ? properties.path : "index"}-gdocs.md`
     ),
     markdown
   );
