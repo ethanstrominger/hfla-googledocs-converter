@@ -11,10 +11,24 @@ import {
 // import { getFrontMatterFromGdoc } from "../hfla-utils/utils/gdocs2md/src/utils.js";
 import { jekyllifyFrontMatter } from "../hfla-utils/utils/gdocs2md/src/utils.js";
 import { DEFAULT_OPTIONS } from "./constants.js";
+import { exit } from "process";
 const pluginOptions = { folder: "1R2fYUh2EwbLot9Akm311Osxpl7WbvEvM" };
 const options = _merge({}, DEFAULT_OPTIONS, pluginOptions);
 
-const googleDocuments = await fetchDocuments(options);
+let googleDocuments = await fetchDocuments(options);
+// TODO: change to use more standard -- prefix (--var value) instead of split =
+const paramValues = {};
+const args = process.argv.slice(2);
+args.forEach((arg) => {
+  const [key, value] = arg.split("=");
+  paramValues[key.toLowerCase()] = value;
+});
+const matchPattern = paramValues["matchpattern"];
+if (matchPattern) {
+  googleDocuments = googleDocuments.filter(({ document }) => {
+    return document.title.toLowerCase().includes(matchPattern.toLowerCase());
+  });
+}
 
 googleDocuments.forEach(async (loopGoogleDocument) => {
   const googleDocument = await convertGDoc2ElementsObj({
@@ -23,9 +37,7 @@ googleDocuments.forEach(async (loopGoogleDocument) => {
   let markdown = await convertElements2MD(googleDocument.elements);
   // const frontMatter = getFrontMatterFromGdoc(googleDocument);
   // markdown = getFrontMatterFromGdoc(googleDocument, markdown);
-  console.log("processing", googleDocument.properties?.title);
   markdown = jekyllifyFrontMatter(googleDocument, markdown);
-  console.log("jekyllifyFrontMatter", markdown.substring(0, 300), "** end **");
   // markdown = formatHeading2MarkdownSection(markdown);
   // markdown = addHeading2MarkdownAnchor(markdown);
   const { properties } = googleDocument;

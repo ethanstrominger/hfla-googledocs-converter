@@ -64,6 +64,9 @@
                     "request": "launch",
                     "envFile": "src/.env",
                     "name": "Launch Program3",
+                    "args": [
+                        "matchpattern=slack"
+                    ],
                     "skipFiles": [
                         "<node_internals>/**"
                     ],
