@@ -11,11 +11,17 @@
 // import { getFrontMatterFromGdoc } from "../hfla-utils/utils/gdocs2md/src/utils.js";
 // import { jekyllifyFrontMatter } from "../hfla-utils/utils/gdocs2md/src/utils.js";
 // import { DEFAULT_OPTIONS } from "./constants.js";
+import path from "path";
 import { jekyllifyDocs } from "../hfla-utils/utils/gdocs2md/src/jekyllUtils.js";
 // const pkg = require("lodash");
 // import { merge as _merge } from "lodash";
 
-const pluginOptions = { folder: "1R2fYUh2EwbLot9Akm311Osxpl7WbvEvM" };
+const root = "/Users/ethanadmin/projects/hackforla-website";
+const pluginOptions = {
+  folder: "1R2fYUh2EwbLot9Akm311Osxpl7WbvEvM",
+  target: root,
+  imagesTarget: path.join(root, "assets/images"),
+};
 
 jekyllifyDocs(pluginOptions);
 

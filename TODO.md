@@ -34,7 +34,7 @@ Tasks
   - [ ] Add hook to automatically generate new markdown and TOC when a file is added, deleted,modified
 - [ ] **_ +++ TEST _**
   - [ ] Generate JSON of Google Docs
-  - [ ] Create docs of different types
+  - [x] Create docs of different types
   - [ ] Generate JSON
   - [ ] Create a jekyllifyDoc to jekllify a single doc
   - [ ] Copy existing tests and modify
@@ -49,6 +49,8 @@ Tasks
   - [x] Custom
   - [x] Custom overwrites automated
   - [x] Automated overwrites default
+  - [ ] Autogenerate provider-link
+  - [ ] Autogenerate image name - if svg exists use it, else configured default
 - [ ] **_ +++ IMAGES _**
   - [x] +++ Store image locally (otherwise, permission issue)
   - [ ] +++ Set size
