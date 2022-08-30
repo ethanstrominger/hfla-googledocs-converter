@@ -1,6 +1,0 @@
-node_modules
-.env
-googledocs-output
-.DS_Store
-// TODO: remove this
-*-gdocs.*
